@@ -1,0 +1,10 @@
+[project]
+name = "instrGen"
+dynamic = ["version"]
+dependencies = [
+    "argparse"
+]
+
+
+[project.scripts]
+instrGen = "instrGen.instrGen:main"
