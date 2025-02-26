@@ -4,7 +4,7 @@ import os
 import sys
 
 
-def gnerate(input_file, output_file):
+def generate(input_file, output_file):
     output_suffix = os.path.splitext(output_file)[1]
 
     if output_suffix == ".ll":
@@ -69,4 +69,4 @@ def main():
     input_file = args.input
     output_file = args.output
 
-    gnerate(input_file, output_file)
+    generate(input_file, output_file)
