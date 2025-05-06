@@ -8,3 +8,4 @@ dependencies = [
 
 [project.scripts]
 instrGen = "instrGen.instrGen:main"
+proxyGen = "instrGen.proxyGen:cli"
