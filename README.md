@@ -32,7 +32,7 @@ Before installation, ensure you have cloned and installed the Trip Counter repos
 git@github.com:pyxis-roc/trip_counter.git
 
 ```bash
-usage: proxyGen [-h] input [input ...] output
+usage: proxyGen [-h] input target_function output
 proxyGen: error: the following arguments are required: input, output
 
 proxyGen mm.ll mm-proxy.so
