@@ -6,22 +6,70 @@ import sys
 def get_proxy(input_file, target_function, output_file='proxy.ll'):
     # use symCount to generate proxy IR for the given LLVM IR file
     with open(output_file, 'w') as f:
-        subprocess.run(['symCount', input_file, target_function], stdout=sys.stdout, stderr=f)
+        subprocess.run(
+            [
+                'symCount', 
+                input_file, 
+                target_function
+            ], 
+            stdout=sys.stdout, 
+            stderr=f
+        )
 
 def gnerate(input_file, output_file):
     output_suffix = os.path.splitext(output_file)[1]
 
     if output_suffix == '.ll':
-        result = subprocess.run(['clang', '-emit-llvm', '-S', input_file, '-o', output_file], stdout=sys.stdout, stderr=sys.stderr)
+        result = subprocess.run(
+            [
+                'clang++', 
+                '-emit-llvm', 
+                '-S', 
+                input_file, 
+                '-o', 
+                output_file
+            ], 
+            stdout=sys.stdout, 
+            stderr=sys.stderr
+        )
     
     elif output_suffix == '':
-        result = subprocess.run(['clang', input_file, '-o', output_file], stdout=sys.stdout, stderr=sys.stderr)
+        result = subprocess.run(
+            [
+                'clang++', 
+                input_file, 
+                '-o', 
+                output_file
+            ], 
+            stdout=sys.stdout, 
+            stderr=sys.stderr
+        )
         
     elif output_suffix == '.o':
-        result = subprocess.run(['clang', '-c', input_file, '-o', output_file], stdout=sys.stdout, stderr=sys.stderr)
+        result = subprocess.run(
+            [
+                'clang++', 
+                '-c', 
+                input_file, 
+                '-o', 
+                output_file
+            ], 
+            stdout=sys.stdout, 
+            stderr=sys.stderr
+        )
 
     elif output_suffix == '.so':
-        result = subprocess.run(['clang', '-shared', input_file, '-o', output_file], stdout=sys.stdout, stderr=sys.stderr)
+        result = subprocess.run(
+            [
+                'clang++', 
+                '-shared', 
+                input_file, 
+                '-o', 
+                output_file
+            ], 
+            stdout=sys.stdout, 
+            stderr=sys.stderr
+        )
 
 def cli():
     
