@@ -85,4 +85,4 @@ def cli():
     get_proxy(input_file, args.target_function, proxy_file)
 
     output_file = args.output
-    gnerate(input_file, output_file)
+    gnerate(proxy_file, output_file)
