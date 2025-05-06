@@ -35,5 +35,5 @@ git@github.com:pyxis-roc/trip_counter.git
 usage: proxyGen [-h] input target_function output
 proxyGen: error: the following arguments are required: input, output
 
-proxyGen mm.ll mm-proxy.so
+proxyGen mm.ll mm mm-proxy.so
 ```
