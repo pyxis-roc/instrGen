@@ -62,6 +62,7 @@ def gnerate(input_file, output_file):
         result = subprocess.run(
             [
                 'clang++', 
+                "-fPIC",
                 '-shared', 
                 input_file, 
                 '-o', 
